@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="MauiAppAgeCalculator.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MauiAppAgeCalculator"
+    Title="MauiAppAgeCalculator"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid RowDefinitions="*,40">
+                <StackLayout
+                    Padding="30"
+                    Spacing="25">
+
+                    <Label
+                        FontSize="32"
+                        HorizontalOptions="Center"
+                        SemanticProperties.HeadingLevel="Level1"
+                        Style="{StaticResource MauiLabel}"
+                        Text="When Can I Legally Buy Alcohol" />
+
+                    <Editor x:Name="current_age" Placeholder="Please enter your current age"></Editor>
+                    
+                    <Label
+                        x:Name="TwentyOne"
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        Text="" />
+
+                    <Button
+                        Clicked="CurrentAgeEntered"
+                        Text="Submit current age" />
+
+                </StackLayout>
+                <Grid
+                    Grid.Row="1"
+                    BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
+                                                      Light={StaticResource Primary}}">
+
+                    <Label
+                        x:Name="VersionLabel"
+                        HorizontalOptions="Center"
+                        TextColor="{StaticResource White}"
+                        VerticalOptions="Center" />
+
+                </Grid>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
